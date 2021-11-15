@@ -4,7 +4,17 @@
   box-sizing: border-box;
 }
 
+.clearfix::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
 /* container that contains all the chat pannel */
+
+body{
+  background-color: green;
+}
 
 .container{
   width: 70%;
@@ -20,7 +30,7 @@
   float: left;
   width: 40%;
   height: 100%;
-  background-color: gray;
+  background-color: white;
   border-right: 1px solid #E1E1E1;
 }
 
@@ -29,7 +39,7 @@
   float: left;
   width: 60%;
   height: 100%;
-  background-color: chartreuse;
+  background-image:url(../img/mine.jpg);
 }
 
 /* user and reciver bar */
@@ -73,7 +83,35 @@
   background-color: #8EDAFD;
   height: 65px;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
+
+.ringtone{
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  font-size: 20px;
+  color: #8DDAFD;
+  margin: 0 5px 0 10px;
+}
+
+.notification-text{
+  float: left;
+}
+
+.notification-text span{
+  float: left;
+  color: gray;
+  text-decoration: underline;
+  font-size: 12px;
+}
+
 
 .search-bar{
   margin: 3px;
@@ -90,6 +128,8 @@
   justify-content: center;
   align-items: center;
   width: 50px;
+  border: 1px solid rgb(223, 223, 223);
+  border-right: none;
 }
 
 .search-text{
@@ -97,3 +137,88 @@
   border: 1px solid rgb(223, 223, 223);
   border-left: none;
 }
+
+.preview-container{
+  width: 98%;
+  height: calc(100% - 171px);
+  background-color: #fff;
+  border-top: 1px solid rgb(223, 223, 223);
+  border-right: 1px solid rgb(223, 223, 223);
+}
+
+.chat-preview{
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background-color: #FBFBFB;
+  border-bottom: 1px solid rgb(223, 223, 223);
+}
+
+.chat-preview img{
+  width: 45px;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.chat-preview div{
+  float: left;
+}
+
+.chat-preview span{
+  font-size: 10px;
+  color: gray;
+}
+
+.message-hour{
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+
+/* CHAT BOXES */
+
+.chat{
+  width: 80%;
+  margin: 30px auto;
+  overflow: auto;
+}
+
+.chat-row{
+  width: 100%;
+  min-height: 30px;
+}
+
+.chat-box{
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 10px;
+}
+
+.chat-box p{
+  padding: 10px 10px; 
+  width: 200px;
+  
+}
+
+.sent, .recived{
+  border-radius: 5px;
+}
+
+.sent{
+  background-color: #D6F9BA;
+  float: right;
+}
+
+.recived{
+background-color: #FFFFFF;
+float: left;
+}
+
+.chat-box span{
+  font-size: 10px;
+  color: gray;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+

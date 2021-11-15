@@ -6,56 +6,102 @@ const app = new Vue({
   
     users:[
       {
-        reciver: "Marco",
-        porfileImage: "",
+        reciver: "Ugo De Ughis",
+        profileImage: "img/avatar_2.jpg",
         visible: true, 
         messages: [
-          {
-            date: "",
-            text: "Buongiorno",
-            status: "sent"
-          }
-        ]
+        {
+          date: "10/01/2021 13:15",
+          text: "Buongiorno, come stai?? ",
+          sent: false
+        },
+        {
+          date: "10/01/2021 13:15",
+          text: "cosa hai fatto ieri?",
+          sent: true
+        },
+        {
+          date: "10/01/2021 13:15",
+          text: "tutto apposto",
+          sent: false
+        },
+      ]
       },
       {
         reciver: "Giovanni",
-        porfileImage: "",
+        profileImage: "img/avatar_3.jpg",
         visible: true, 
         messages: [
           {
-            date: "",
-            text: "Buongiorno",
-            status: "sent"
-          }
+            date: "10/01/2021 13:15",
+            text: "Buongiorno, come stai?? ",
+            sent: true
+          },
+          {
+            date: "10/01/2021 13:15",
+            text: "cosa hai fatto ieri?",
+            sent: false
+          },
+          {
+            date: "10/01/2021 13:15",
+            text: "tutto apposto",
+            sent: true
+          },
         ]
       },
       {
         reciver: "Luca",
-        porfileImage: "",
+        profileImage: "img/avatar_4.jpg",
         visible: true, 
         messages: [
           {
-            date: "",
-            text: "Buongiorno",
-            status: "sent"
-          }
+            date: "10/01/2021 13:15",
+            text: "Buongiorno, come stai?? ",
+            sent: false
+          },
+          {
+            date: "10/01/2021 13:15",
+            text: "cosa hai fatto ieri?",
+            sent: true
+          },
+          {
+            date: "10/01/2021 13:15",
+            text: "tutto apposto",
+            sent: false
+          },
         ]
       },
       {
         reciver: "Giuseppe",
-        porfileImage: "",
+        profileImage: "img/avatar_5.jpg",
         visible: true, 
         messages: [
           {
-            date: "",
-            text: "Buongiorno",
-            status: "sent"
-          }
+            date: "10/01/2021 13:15",
+            text: "Buongiorno, come stai?? ",
+            sent: false
+          },
+          {
+            date: "10/01/2021 13:15",
+            text: "cosa hai fatto ieri?",
+            sent: true
+          },
+          {
+            date: "10/01/2021 13:15",
+            text: "tutto apposto",
+            sent: false
+          },
         ]
       }
     ],
 
-    notification: true,
+    notification: {
+      active :true,
+      off : false
+    },
+
+    selected : 0,
+    
 
   },
 
