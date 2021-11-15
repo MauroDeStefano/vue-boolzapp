@@ -102,7 +102,6 @@ const app = new Vue({
 
     selected : 0,
     
-
   },
 
 });
