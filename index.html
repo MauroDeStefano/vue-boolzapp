@@ -49,7 +49,7 @@
         </div>
 
         <div class="preview-container">
-          <div class="chat-preview" v-for="(user, index) in users" >
+          <div class="chat-preview" v-for="(user, index) in users" :class="{'active': selected === index}">
             <div><img :src="user.profileImage" alt="user.reciver"></div>
             <div>
               <h4>{{user.reciver}}</h4>
@@ -78,7 +78,7 @@
           </div>
         </div>
 
-        <div class="chat">
+        <div class="chat clearfix">
 
           <div v-for="(message) in users[selected].messages" class="chat-row clearfix">
               
@@ -88,8 +88,16 @@
             </div> 
              
           </div>
+         </div>
 
-        </div>
+         <div class="write">
+          
+            <input class="write-input"
+            type="text" 
+            placeholder="Scrivi un messaggio">
+          </div>
+
+         </div>
 
       </div>
 
