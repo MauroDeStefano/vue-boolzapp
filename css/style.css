@@ -1,0 +1,99 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* container that contains all the chat pannel */
+
+.container{
+  width: 70%;
+  min-width: 600px;
+  height: 96vh;
+  background-color: aqua;
+  margin: 2vh auto;
+}
+
+/* left pannel that contains the chats list */
+
+.left-section{
+  float: left;
+  width: 40%;
+  height: 100%;
+  background-color: gray;
+  border-right: 1px solid #E1E1E1;
+}
+
+
+.right-section{
+  float: left;
+  width: 60%;
+  height: 100%;
+  background-color: chartreuse;
+}
+
+/* user and reciver bar */
+
+.top-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  height: 60px;
+  background-color: #EAE9EA;
+}
+
+
+.top-box img{
+  width: 45px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+
+.reciver-left div{
+  float: left;
+}
+
+.top-box h4{
+  display: inline-block;
+}
+
+.top-box i{
+  margin: 0 3px;
+  color: #B1B1B1;
+}
+
+/* ////user and reciver bar */
+
+/* LEFT LIST */
+
+.notification-toogle{
+  background-color: #8EDAFD;
+  height: 65px;
+  width: 100%;
+}
+
+.search-bar{
+  margin: 3px;
+}
+
+.search-icon, .search-text{
+  float: left;
+  height: 40px;
+}
+
+.search-icon{
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+}
+
+.search-text{
+  width: calc(100% - 50px);
+  border: 1px solid rgb(223, 223, 223);
+  border-left: none;
+}
