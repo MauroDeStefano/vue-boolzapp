@@ -40,7 +40,6 @@ i{
   border-right: 1px solid #E1E1E1;
 }
 
-
 .right-section{
   float: left;
   width: 60%;
@@ -58,7 +57,6 @@ i{
   height: 60px;
   background-color: #EAE9EA;
 }
-
 
 .top-box img{
   width: 45px;
@@ -79,6 +77,11 @@ i{
 .top-box i{
   margin: 0 3px;
   color: #B1B1B1;
+}
+
+.reciver span{
+  font-size: 10px;
+  color: gray;
 }
 
 /* ////user and reciver bar */
@@ -134,13 +137,17 @@ i{
   align-items: center;
   width: 45px;
   height: 45px;
+  border-radius: 3px 0 0 3px;
   border: 1px solid rgb(223, 223, 223);
   border-right: none;
 }
 
 .search-text{
   width: calc(100% - 50px);
+  height: 45px;
+  line-height: 45px;
   border: 1px solid rgb(223, 223, 223);
+  border-radius: 0 3px 3px 0;
   border-left: none;
 }
 
@@ -150,7 +157,7 @@ i{
   background-color: #fff;
   border-top: 1px solid rgb(223, 223, 223);
   border-right: 1px solid rgb(223, 223, 223);
-  overflow: auto;
+  overflow-y: scroll;
 }
 
 .chat-preview{
@@ -159,6 +166,10 @@ i{
   height: 60px;
   background-color: #FBFBFB;
   border-bottom: 1px solid rgb(223, 223, 223);
+}
+
+.chat-preview:hover{
+  background-color: rgb(240, 240, 240);
 }
 
 .chat-preview img{
@@ -189,6 +200,7 @@ i{
   width: 100%;
   height: calc(100% - 110px);
   overflow: auto;
+  overflow-y: scroll;
 }
 
 .chat-row{
@@ -201,18 +213,15 @@ i{
   margin-top: 20px
 }
 
-
 .chat-box{
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
 }
 
-
 .chat-box p{
   padding: 10px 10px; 
   width: 200px;
-  
 }
 
 .sent, .recived{

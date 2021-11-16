@@ -19,8 +19,8 @@
 
         <div class="user top-box">
           <div class="user-left">
-            <img src="img/avatar_1.jpg" alt="">
-            <h4>Nome Utente</h4>
+            <img :src="yourProfile.image" alt="">
+            <h4>{{yourProfile.sender}}</h4>
           </div>
           <div class="user-right">
             <i class="fas fa-circle-notch"></i>
@@ -49,7 +49,7 @@
         </div>
 
         <div class="preview-container">
-          <div class="chat-preview" v-for="(user, index) in users" :class="{'active': selected === index}">
+          <div class="chat-preview" v-for="(user, index) in users" :class="{'active': selected === index}" @click="selected = index">
             <div><img :src="user.profileImage" alt="user.reciver"></div>
             <div>
               <h4>{{user.reciver}}</h4>
@@ -64,11 +64,11 @@
 
         <div class="reciver top-box">
           <div class="reciver-left">
-            <div><img src="img/avatar_1.jpg" alt=""></div>
+            <div><img :src="users[selected].profileImage" :alt="reciver"></div>
             
             <div class="reciver last-access">
-              <h5>Nome Utente</h5>
-              <span>data di accesso</span>
+              <h5>{{users[selected].reciver}}</h5>
+              <span>ultimo accesso {{users[selected].messages[users[selected].messages.length -1].date}}</span>
             </div>
           </div>
           <div class="reciver-box-right">
