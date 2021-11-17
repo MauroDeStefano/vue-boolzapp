@@ -10,7 +10,7 @@
 // Milestone 4
 // Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 
-
+getDate();
 
 const app = new Vue({
   
@@ -30,13 +30,13 @@ const app = new Vue({
           sent: false
         },
         {
-          date: "10/01/2021 13:15",
-          text: "cosa hai fatto ieri?",
+          date: "10/01/2021 13:30",
+          text: "bene dai, cosa hai fatto ieri?",
           sent: true
         },
         {
-          date: "10/01/2021 13:15",
-          text: "tutto apposto",
+          date: "10/01/2021 13:45",
+          text: "il solito giro di commissioni.",
           sent: false
         },
       ]
@@ -47,18 +47,18 @@ const app = new Vue({
         visible: true, 
         messages: [
           {
-            date: "10/01/2021 13:15",
-            text: "Buongiorno, come stai?? ",
+            date: "10/01/2021 20:15",
+            text: "hey ciao!",
             sent: true
           },
           {
-            date: "10/01/2021 13:15",
-            text: "cosa hai fatto ieri?",
+            date: "10/01/2021 21:15",
+            text: "ciao, dimmi..",
             sent: false
           },
           {
-            date: "10/01/2021 13:15",
-            text: "tutto apposto",
+            date: "10/01/2021 21:25",
+            text: "no, niente, salutavo e basta",
             sent: true
           },
         ]
@@ -74,13 +74,13 @@ const app = new Vue({
             sent: false
           },
           {
-            date: "10/01/2021 13:15",
-            text: "cosa hai fatto ieri?",
+            date: "10/01/2021 13:25",
+            text: "tutto apposto, te? che racconti?",
             sent: true
           },
           {
-            date: "10/01/2021 13:15",
-            text: "tutto apposto",
+            date: "10/01/2021 13:35",
+            text: "niente di che, si lavora sodo",
             sent: false
           },
         ]
@@ -92,17 +92,17 @@ const app = new Vue({
         messages: [
           {
             date: "10/01/2021 13:15",
-            text: "Buongiorno, come stai?? ",
+            text: "ciao bello!",
             sent: false
           },
           {
             date: "10/01/2021 13:15",
-            text: "cosa hai fatto ieri?",
+            text: "Hey bomber!",
             sent: true
           },
           {
             date: "10/01/2021 13:15",
-            text: "tutto apposto",
+            text: "Sta sera Party",
             sent: false
           },
         ]
@@ -119,8 +119,65 @@ const app = new Vue({
       off : false
     },
 
+    newText: "",
+
     selected : 0,
+
+    searchText = ""
     
   },
 
+  methods:{
+
+    newMessageSend(){
+      
+      const newMessage = {
+        date : getDate(),
+        text : this.newText,
+        sent : true
+      };
+      
+      this.users[this.selected].messages.push(newMessage);
+
+      const newAwnser = {
+        date: getDate(),
+        text: "Ok",
+        sent: false
+      };
+
+      this.newText = "";
+
+      setTimeout(()=>{
+
+      this.users[this.selected].messages.push(newAwnser);
+
+      }, 1000);
+
+    },
+
+  }
+
 });
+
+function getDate(){
+  let trueDate = new Date();
+
+  let day = trueDate.getDate();
+  let month = trueDate.getMonth() + 1;
+  let fullYear = trueDate.getUTCFullYear();
+  let hours = trueDate.getUTCHours() + 1;
+  let minutes = trueDate.getUTCMinutes();
+
+  if (minutes < 10){
+    minutes= "0" + minutes;
+  };
+
+  if(hours < 10){
+    hours = "0" + hours;
+  };
+
+   return day + "/"+ month + "/" + fullYear + " " + hours + ":" + minutes;
+
+};
+
+

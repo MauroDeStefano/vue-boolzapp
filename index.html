@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <title>Boolzapp</title>
 </head>
@@ -44,6 +50,7 @@
             <i class="fas fa-search"></i>
           </div>
           <input class="search-text"
+          v-model="searchText"
           type="text"
           placeholder="Cerca o inizia una nuova chat">
         </div>
@@ -53,7 +60,7 @@
             <div><img :src="user.profileImage" alt="user.reciver"></div>
             <div>
               <h4>{{user.reciver}}</h4>
-              <span>{{user.messages[user.messages.length -1].text}} ...</span>
+              <span>{{user.messages[user.messages.length -1].text.slice(0, 10)}}...</span>
               <span class="message-hour">{{user.messages[user.messages.length -1].date}}</span>
             </div>
           </div>
@@ -64,11 +71,11 @@
 
         <div class="reciver top-box">
           <div class="reciver-left">
-            <div><img :src="users[selected].profileImage" :alt="reciver"></div>
+            <div><img :src="users[selected].profileImage" :alt="users[selected].reciver"></div>
             
             <div class="reciver last-access">
               <h5>{{users[selected].reciver}}</h5>
-              <span>ultimo accesso {{users[selected].messages[users[selected].messages.length -1].date}}</span>
+              <span>ultimo accesso{{users[selected].messages[users[selected].messages.length -1].date}}</span>
             </div>
           </div>
           <div class="reciver-box-right">
@@ -94,7 +101,9 @@
           <i class="far fa-smile"></i>
           <input class="write-input"
           type="text" 
-          placeholder="Scrivi un messaggio">
+          placeholder="Scrivi un messaggio"
+          v-model.trim="newText"
+          @keyup.enter="newMessageSend">
           <i class="fas fa-microphone"></i>
         </div>
 
