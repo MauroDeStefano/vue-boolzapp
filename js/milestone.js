@@ -21,8 +21,7 @@ const app = new Vue({
     users:[
       {
         reciver: "Ugo De Ughis",
-        profileImage: "img/avatar_2.jpg",
-        visible: true, 
+        profileImage: "img/avatar_2.jpg", 
         messages: [
         {
           date: "10/01/2021 13:15",
@@ -43,8 +42,7 @@ const app = new Vue({
       },
       {
         reciver: "Giovanni",
-        profileImage: "img/avatar_3.jpg",
-        visible: true, 
+        profileImage: "img/avatar_3.jpg", 
         messages: [
           {
             date: "10/01/2021 20:15",
@@ -65,8 +63,7 @@ const app = new Vue({
       },
       {
         reciver: "Luca",
-        profileImage: "img/avatar_4.jpg",
-        visible: true, 
+        profileImage: "img/avatar_4.jpg", 
         messages: [
           {
             date: "10/01/2021 13:15",
@@ -87,8 +84,7 @@ const app = new Vue({
       },
       {
         reciver: "Giuseppe",
-        profileImage: "img/avatar_5.jpg",
-        visible: true, 
+        profileImage: "img/avatar_5.jpg", 
         messages: [
           {
             date: "10/01/2021 13:15",
@@ -123,7 +119,7 @@ const app = new Vue({
 
     selected : 0,
 
-    searchText = ""
+    searchText : ""
     
   },
 

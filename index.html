@@ -56,7 +56,11 @@
         </div>
 
         <div class="preview-container">
-          <div class="chat-preview" v-for="(user, index) in users" :class="{'active': selected === index}" @click="selected = index">
+          <div class="chat-preview" 
+          v-for="(user, index) in users" 
+          :class="{'active': selected === index}" 
+          @click="selected = index" 
+          v-if='searchText === "" || user.reciver.toUpperCase().includes(searchText.toUpperCase())'>
             <div><img :src="user.profileImage" alt="user.reciver"></div>
             <div>
               <h4>{{user.reciver}}</h4>
