@@ -125,6 +125,9 @@ const app = new Vue({
 
   methods:{
 
+
+    // here I delcare a new object for the message I send and for the message I recive and push it on the right conversation.
+
     newMessageSend(){
       
       const newMessage = {
@@ -151,9 +154,21 @@ const app = new Vue({
 
     },
 
+    previewMessage(index){
+      let message = this.users[index].messages[this.users[index].messages.length -1].text;
+      if (message.length < 20){
+       return message;
+      }else {
+        return message.slice(0, 20) + "...";
+      }
+       
+    },
+
   }
 
 });
+
+// here I gate the date and the hour to put it in any new message.
 
 function getDate(){
   let trueDate = new Date();

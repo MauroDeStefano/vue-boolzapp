@@ -64,7 +64,7 @@
             <div><img :src="user.profileImage" alt="user.reciver"></div>
             <div>
               <h4>{{user.reciver}}</h4>
-              <span>{{user.messages[user.messages.length -1].text.slice(0, 10)}}...</span>
+              <span>{{previewMessage(index)}}</span>
               <span class="message-hour">{{user.messages[user.messages.length -1].date}}</span>
             </div>
           </div>
@@ -93,10 +93,10 @@
 
           <div v-for="(message) in users[selected].messages" class="chat-row clearfix">
               
-            <div class="chat-box" :class="{'sent': message.sent, 'recived': !message.sent}" >
+            <div class="chat-box" :class="{'sent': message.sent, 'recived': !message.sent}">
               <p>{{message.text}}</p>
               <span>{{message.date}}</span>
-            </div> 
+            </div>
              
           </div>
          </div>
