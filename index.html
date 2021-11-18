@@ -97,11 +97,11 @@
               <p>{{message.text}}</p>
               <span>{{message.date}}</span>
               <i 
-                :class="{'chevron-sent': message.sent, 'chevron-recive' : !message.sent}" 
+                :class="{'chevron-sent': message.sent, 'chevron-recive' : !message.sent}"
                 class="fas fa-chevron-down"
-                @click="messageOptions = !messageOptions"> 
+                @click="messageOptions = !messageOptions, prova = index"> 
               </i>
-              <div v-if="messageOptions === true && message[index] === this" class="options">
+              <div v-if="messageOptions === true && index === prova" class="options">
                 <div class="info">Informazioni</div>
                 <div class="delete-message">Elimina Messaggio</div>
                 <div class="delete-message">Elimina Tutti</div>
@@ -112,17 +112,25 @@
          </div>
 
         <div class="write">
-          <i class="far fa-smile"></i>
+          <i @click="menuEmoji = !menuEmoji" class="far fa-smile"></i>
           <input class="write-input"
           type="text" 
           placeholder="Scrivi un messaggio"
           v-model.trim="newText"
           @keyup.enter="newMessageSend">
-          <i class="fas fa-microphone"></i>
+          <i @click="audioAllert()" class="fas fa-microphone"></i>
+          <div class="emoji" v-if="menuEmoji === true">
+            <i @click="fakeAllert()" class="far fa-smile-wink"></i>
+            <i @click="fakeAllert()" class="far fa-smile-beam"></i>
+            <i @click="fakeAllert()" class="far fa-grin-squint-tears"></i>
+            <i @click="fakeAllert()" class="far fa-kiss-beam"></i>
+            <i @click="fakeAllert()" class="far fa-hand-scissors"></i>
+            <i @click="fakeAllert()" class="far fa-thumbs-up"></i>
+            <i @click="fakeAllert()" class="far fa-handshake"></i>
+            <i @click="fakeAllert()" class="fab fa-angellist"></i>
+            <i @click="fakeAllert()" class="fas fa-hand-holding-heart"></i>
+          </div>
         </div>
-
-         </div>
-
       </div>
 
     </div>

@@ -136,7 +136,11 @@ const app = new Vue({
     // the toogle to display the options
 
     messageOptions: false,
-    
+
+    prova: "",
+
+    menuEmoji: false,
+
     
   },
 
@@ -181,11 +185,19 @@ const app = new Vue({
        
     },
 
+    fakeAllert(){
+      alert("sono fintiiiiii");
+    },
+
+    audioAllert(){
+      alert("stiamo riscostrando problemi con la tua connessione, riprova più tardi.")
+    },
+
   }
 
 });
 
-// here I gate the date and the hour to put it in any new message.
+// here I get the date and the hour to put it in any new message.
 
 function getDate(){
   let trueDate = new Date();

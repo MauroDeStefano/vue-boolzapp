@@ -247,6 +247,7 @@ float: left;
 }
 
 .write{
+  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -266,11 +267,25 @@ float: left;
   border: none;
 }
 
+.emoji{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  width: 240px;
+  height: 40px;
+  background-color: #F3EEEA;
+  border-radius: 5px;
+  border: 2px solid rgb(214, 214, 214);
+  padding: 5px 10px;
+  font-size: 20px;
+}
+
 .fa-microphone:hover{
   color: red;
 }
 
-.fa-smile:hover{
+.fa-smile:hover, .emoji i{
   color: black;
   background-color: yellow;
   border-radius: 50%;
@@ -312,6 +327,7 @@ color: #FFFFFF;
   border: 1px solid rgb(184, 184, 184);
   border-radius: 5px;
   line-height: 20px;
+  z-index: 999;
 }
 
 .options div:hover{
