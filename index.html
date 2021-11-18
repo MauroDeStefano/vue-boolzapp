@@ -103,8 +103,8 @@
               </i>
               <div v-if="messageOptions === true && index === prova" class="options">
                 <div class="info">Informazioni</div>
-                <div class="delete-message">Elimina Messaggio</div>
-                <div class="delete-message">Elimina Tutti</div>
+                <div @click="removeMessage(index)" class="delete-message">Elimina Messaggio</div>
+                
               </div>
             </div>
              

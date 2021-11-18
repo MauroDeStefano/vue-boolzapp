@@ -193,6 +193,12 @@ const app = new Vue({
       alert("stiamo riscostrando problemi con la tua connessione, riprova più tardi.")
     },
 
+    removeMessage(index){
+       let prova = this.users[this.selected].messages;
+
+       prova = prova.splice(index, 1);
+    },
+
   }
 
 });
