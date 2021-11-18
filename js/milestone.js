@@ -18,6 +18,8 @@ const app = new Vue({
 
   data: {
   
+
+    // database of the messages
     users:[
       {
         reciver: "Ugo De Ughis",
@@ -105,21 +107,36 @@ const app = new Vue({
       }
     ],
 
+    // some info of the owner of the browser
+
     yourProfile:{
       sender: "Mauro",
       image: "img/avatar_7.jpg"
     },
+
+    // toogler buttom for the notifications
 
     notification: {
       active :true,
       off : false
     },
 
+    // the blank line to refresh when you put text in chat
+
     newText: "",
+
+    // My counter to select the actvie message
 
     selected : 0,
 
-    searchText : ""
+    // the blank line to refresh the search bar
+
+    searchText : "",
+
+    // the toogle to display the options
+
+    messageOptions: false,
+    
     
   },
 
@@ -135,23 +152,23 @@ const app = new Vue({
         text : this.newText,
         sent : true
       };
-      
-      this.users[this.selected].messages.push(newMessage);
-
       const newAwnser = {
         date: getDate(),
         text: "Ok",
         sent: false
       };
 
-      this.newText = "";
+      if(this.newText.length > 0){
+        this.users[this.selected].messages.push(newMessage);
+        
+        this.newText = "";
 
-      setTimeout(()=>{
-
-      this.users[this.selected].messages.push(newAwnser);
-
-      }, 1000);
-
+        setTimeout(()=>{
+        
+        this.users[this.selected].messages.push(newAwnser);
+        
+        }, 1000);
+      }
     },
 
     previewMessage(index){

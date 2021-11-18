@@ -91,11 +91,21 @@
 
         <div class="chat clearfix">
 
-          <div v-for="(message) in users[selected].messages" class="chat-row clearfix">
+          <div v-for="(message, index) in users[selected].messages" class="chat-row clearfix">
               
             <div class="chat-box" :class="{'sent': message.sent, 'recived': !message.sent}">
               <p>{{message.text}}</p>
               <span>{{message.date}}</span>
+              <i 
+                :class="{'chevron-sent': message.sent, 'chevron-recive' : !message.sent}" 
+                class="fas fa-chevron-down"
+                @click="messageOptions = !messageOptions"> 
+              </i>
+              <div v-if="messageOptions === true && message[index] === this" class="options">
+                <div class="info">Informazioni</div>
+                <div class="delete-message">Elimina Messaggio</div>
+                <div class="delete-message">Elimina Tutti</div>
+              </div>
             </div>
              
           </div>
